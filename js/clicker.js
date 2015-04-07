@@ -1,15 +1,19 @@
+// Make a canvas element
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = 512;
 canvas.height = 480;
 document.body.appendChild(canvas);
 
+// Make a cow image object
 var cowReady = false;
 var cow = new Image();
 cow.onload = function () {
     cowReady = true;
 };
 cow.src = "images/cow.jpg";
+
+// Set up counting clicks
 var clicks = 0;
 var incrementClicks = function () {
     clicks ++;
@@ -38,7 +42,7 @@ var reset = function () {
 
 var main = function () {
 	render();
-
+    // Do it again!
     requestAnimationFrame(main);
 };
 
